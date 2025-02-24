@@ -3,4 +3,4 @@ if (texto === "ICO"){
     console.log("Tas Correcto");
 }else {
     console.log("Tas Mal");
-}
+} 
