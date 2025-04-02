@@ -51,8 +51,15 @@ function mostrarProducto(){
 }
 
 
-function buscarProdcuto(){
+function buscarProducto() { // Corregí el nombre de la función
+    let nombreBuscado = prompt("Introduce el nombre del producto a buscar:");
+    let productoEncontrado = inventario.find(producto => producto.nombre.toLowerCase() === nombreBuscado.toLowerCase());
 
+    if (productoEncontrado) {
+        alert(`Producto encontrado: \nNombre: ${productoEncontrado.nombre}\nCantidad: ${productoEncontrado.cantidad}\nPrecio: ${productoEncontrado.precio}`);
+    } else {
+        alert("Producto no encontrado");
+    }
 }
 
 function iniciarprograma(){
