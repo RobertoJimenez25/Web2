@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje en Whatsapp</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="body">
+    <header>
+        <h1 class="top">Manda un Mensaje en WhatsApp</h1>
+    </header>
+
+    <div style="margin: 50px;">
+        <div class="formulario">
+            <label for="input0">Numero a mandar Mensaje: </label>
+            <input class="color2" type="number" id ="input0" required maxlength="10" placeholder="Escribe el numero">
+            <br> <br>
+            <label for="input1">Mensaje: </label>
+            <input class="color2" type="text" id="input1" required maxlength="150" placeholder="Escribe el mensaje">
+            <br> <br>
+            <button class="color" onclick="enviar()">Enviar</button>
+            <button class="color" onclick="location.href='tareawha.html'">Enviar un nuevo mensaje</button>
+        </div>
+    </div>
+    <img style="width: 300px;" src="https://cdn2.actitudfem.com/media/files/media/files/en-linea-whatsapp.gif" alt="img">
+</body>
+<script src="app.js"></script>
+</html>

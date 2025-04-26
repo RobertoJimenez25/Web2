@@ -11,6 +11,8 @@ const server = PaquetesServidorNodeImportado.createServer((req,res)=>{
 
     //enviamos respuesta
     res.end('Holla mundo con Node.js');
+    // node app.js 
+
 });
 
 //Escucha el puerto

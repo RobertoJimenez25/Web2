@@ -1,0 +1,35 @@
+.body{
+    margin: 50px auto;
+    background-color: #1a0b46;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.formulario{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #f0f0f0;
+    width: 450px;
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.top{
+    font-family: 'Times New Roman', Times, serif;
+    color: #f0f0f0;
+    font-size: 70px;
+}
+
+.color{
+    padding: 10px;
+    color: #f0f0f0;
+    background-color: rgb(75, 35, 163);
+}
+
+.color2{
+    color: #ffffff;
+    background-color: #1a0b46;
+    border-color: #f0f0f0;
+}
