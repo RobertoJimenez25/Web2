@@ -5,14 +5,15 @@ const express= require('express');
 const app = express();
 
 //definir el puerto
-const port = 7008;
+const port = 3070;
 
 //Configuracion de ruta get para la raiz ('/')
 app.get('/',(req,res)=>{
     res.send('Hola mundo');
 });
 
-app.listen(port);
-
-
+app.listen(port, () => {
+    console.log(`Servidor funcional por la URL: http://127.0.0.1:${port}`);
+    }
+);
 
