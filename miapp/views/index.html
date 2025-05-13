@@ -6,9 +6,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Paginad e Inicio</h1>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper row indigo darken-4">
+            <a href="#" class="brand-logo col s12">ICO</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="https://www.aragon.unam.mx/fes-aragon/#!/oferta-academica/licenciaturas/computacion">ICO</a></li>
+                <li><a href="www.aragon.unam.mx/fes-aragon/">FES ARAGON</a></li>
+                <li><a href="https://www.unam.mx">UNAM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Principal -->
+    <div class="container" style="text-align: center;">
+        <h1>Pagina de Inicio</h1>
+        <a class="waves-effect waves-light btn indigo darken-4" href="registros.html">REGISTROS</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer indigo darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Mi App</h5>
+                    <p class="grey-text text-lighten-4">Uso de materialize</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Programacion Web 2
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
