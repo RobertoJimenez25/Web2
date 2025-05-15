@@ -35,35 +35,83 @@ app.listen(port, () => {
 });
 
 //mostrar lista de usuarios
-app.get('/',(req,res)=>{
-    //Consulta a la DB
-    const consultadb = 'SELECT * FROM users';
+app.get('/', (req, res) => {
 
-    //Trabajamos con la conexión
-    db.query(consultadb,(err,res)=>{
-        if (err){
-            //No se encontro al usuario o hubo un error
-            console.error('Error al recuperar usuarios', err);
-            //Mostraremos información al usuario
-            res.changedRows('Error, no se recuperan los datos de la DB');
-        }else{
-            res.render('index',{users: results});
-        }
-    });
+    //consulta a la base de datos
+
+    const consultaDB = 'SELECT * FROM users';
+
+    //Trabajamos con la base de datos
+
+    db.query(consultaDB, (err, results) => {
+        if(err){
+            
+            // no se pudo recuperar la informacion de la base de datos
+
+            console.error('Error al recuperar el usuario', err);
+            
+            //Mostraremos informacion al usuario
+
+            res.send('Error, no se pudo recuperar la informacion de la base de datos');
+
+    }else{
+
+        //Mostraremos la informacion al usuario
+
+        res.render('index', { users: results });
+    }
+});
 
 });
 
-//modulo para agregar al usuario
-app.post('/add',(res,res)=>{
-    const {name,email}=req.body;
-    /*
-    informacion
-    */
-    const query='INSERT INTO users(name, email) VALUES (?,?)';
-    db.query(insertarRegistro,[name,email],(err)=>{
+
+//Modulo para agregar un nuevo usuario
+
+app.post('/add', (req, res) => {
+
+    const { name, email } = req.body;
+
+const insertarRegistro = 'INSERT INTO users (name, email) VALUES (?, ?)';
+
+db.query(insertarRegistro, [name, email], (err, results) => {
+    if (err) {
+        console.error('Error al insertar el registro', err);
+        res.send('Error, no se pudo insertar el registro');
+         } else {
+                console.log('Registro insertado correctamente');
+                res.redirect('/');
+            }
+    });
+});
+
+//Modulo editar un usuario
+app.post('/add', (req, res) => {
+
+});
+
+//editar un usuario
+app.get('/edit/:id', (req, res) => {
+    const{id}=req.params;
+    const buscarUsuariID = 'SELECT * FROM users WHERE id = ?';
+    db.query(buscarUsuariID, [id], (err, results) => {
+        if (err) {
+            console.error('Error al buscar el usuario', err);
+            res.send('Error, no se pudo recuperar la informacion de la base de datos');
+        } else {
+            res.render('edit', { users: results[0] });
+        }
+    });
+});
+
+//update
+app.post('/update/:id', (req, res) => {
+    const {id} = req.params;
+    const {name,email} = req.body;
+
+    const query = "UPDATE users SET name =?, email =? WHERE id =?";
+    db.query(query,[name,email,id], (err)=>{
         if(err){
-            console.error('Error al agregar usuario',err);
-            res.send('Error')
+            console.error('error',err);
         }else{
             res.redirect('/');
         }
